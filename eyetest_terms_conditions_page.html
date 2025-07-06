@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - VisionPro AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #007AFF;
+            --primary-blue-dark: #0056CC;
+            --accent-purple: #5856D6;
+            --accent-pink: #FF2D92;
+            --success-green: #34C759;
+            --warning-orange: #FF9500;
+            --error-red: #FF3B30;
+            --text-primary: #1D1D1F;
+            --text-secondary: #8E8E93;
+            --text-tertiary: #C7C7CC;
+            --bg-primary: #F2F2F7;
+            --bg-secondary: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 16px 60px rgba(0, 0, 0, 0.16);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            animation: backgroundShift 15s ease-in-out infinite;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+            33% { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #a8edea 100%); }
+            66% { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 50%, #667eea 100%); }
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: headerShine 8s ease-in-out infinite;
+        }
+        
+        @keyframes headerShine {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            animation: logoEntrance 2s ease-out;
+        }
+        
+        @keyframes logoEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .logo-icon {
+            font-size: 48px;
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
+            animation: iconFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .app-name {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 25px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Navigation Sidebar */
+        .nav-sidebar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            animation: sidebarSlideIn 1s ease-out 0.5s both;
+        }
+        
+        @keyframes sidebarSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%) translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+        
+        .nav-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin-bottom: 4px;
+        }
+        
+        .nav-item:hover {
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--primary-blue);
+            transform: translateX(8px);
+        }
+        
+        .nav-item.active {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+        
+        /* Content Card */
+        .content-card {
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 50px;
+            margin-left: 300px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: contentSlideIn 1s ease-out 0.8s both;
+        }
+        
+        @keyframes contentSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-purple), var(--accent-pink));
+            border-radius: 24px 24px 0 0;
+        }
+        
+        /* Typography Styles */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 100px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 30px 0 15px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-subtitle::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+        }
+        
+        .content-paragraph {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        
+        .content-list {
+            margin: 20px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .content-list li {
+            position: relative;
+            padding: 12px 0 12px 30px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(199, 199, 204, 0.3);
+        }
+        
+        .content-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .content-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: var(--primary-blue);
+            font-weight: 900;
+            font-size: 18px;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(88, 86, 214, 0.05));
+            border: 1px solid rgba(0, 122, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+        }
+        
+        .highlight-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .important-notice {
+            background: linear-gradient(135deg, rgba(255, 149, 0, 0.05), rgba(255, 204, 2, 0.05));
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            border-left: 4px solid var(--warning-orange);
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.05), rgba(48, 209, 88, 0.05));
+            border: 1px solid rgba(52, 199, 89, 0.3);
+            border-left: 4px solid var(--success-green);
+        }
+        
+        /* Contact Information */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .contact-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .contact-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1D1D1F 0%, #2C2C2E 100%);
+            color: white;
+            padding: 50px 0;
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 122, 255, 0.1), rgba(88, 86, 214, 0.1));
+            opacity: 0.5;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+        .footer-text {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.6;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 28px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .nav-sidebar {
+                display: none;
+            }
+            
+            .content-card {
+                margin-left: 0;
+                padding: 30px;
+                border-radius: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 15px;
+            }
+            
+            .app-name {
+                font-size: 32px;
+            }
+            
+            .page-title {
+                font-size: 24px;
+            }
+            
+            .content-card {
+                padding: 25px;
+                margin: 20px 15px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1C1C1E;
+                --bg-secondary: #2C2C2E;
+                --text-primary: #FFFFFF;
+                --text-secondary: #8E8E93;
+                --glass-bg: rgba(44, 44, 46, 0.8);
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Print styles */
+        @media print {
+            .nav-sidebar,
+            .back-to-top,
+            .header {
+                display: none;
+            }
+            
+            .content-card {
+                margin-left: 0;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <span class="logo-icon">👁️</span>
+                <h1 class="app-name">VisionPro AI</h1>
+            </div>
+            <h2 class="page-title">Terms and Conditions</h2>
+            <p class="page-subtitle">
+                Please read these terms carefully before using our vision training and eye health application
+            </p>
+            <div class="last-updated">
+                📅 Last Updated: December 15, 2024
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div class="nav-title">
+            📋 Quick Navigation
+        </div>
+        <a href="#acceptance" class="nav-item active">Acceptance of Terms</a>
+        <a href="#description" class="nav-item">App Description</a>
+        <a href="#user-accounts" class="nav-item">User Accounts</a>
+        <a href="#health-disclaimer" class="nav-item">Health Disclaimer</a>
+        <a href="#privacy" class="nav-item">Privacy & Data</a>
+        <a href="#usage-rules" class="nav-item">Usage Rules</a>
+        <a href="#intellectual-property" class="nav-item">Intellectual Property</a>
+        <a href="#limitations" class="nav-item">Limitations</a>
+        <a href="#updates" class="nav-item">Updates</a>
+        <a href="#contact" class="nav-item">Contact Us</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <main class="content-card">
+            <!-- Section 1: Acceptance of Terms -->
+            <section id="acceptance" class="section">
+                <h2 class="section-title">1. Acceptance of Terms</h2>
+                <p class="content-paragraph">
+                    By downloading, installing, or using VisionPro AI, you agree to be bound by these Terms and Conditions. 
+                    If you do not agree to these terms, please do not use our application.
+                </p>
+                <p class="content-paragraph">
+                    These terms constitute a legally binding agreement between you and VisionPro AI regarding your use of our 
+                    vision training games, eye exercises, and health tracking features.
+                </p>
+                
+                <div class="highlight-box important-notice">
+                    <div class="highlight-title">⚠️ Important Notice</div>
+                    <p>VisionPro AI is designed for entertainment, education, and general wellness purposes. It is not intended to diagnose, treat, cure, or prevent any medical condition.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: App Description -->
+            <section id="description" class="section">
+                <h2 class="section-title">2. Application Description</h2>
+                <p class="content-paragraph">
+                    VisionPro AI is a comprehensive eye health and vision training application that provides:
+                </p>
+                <ul class="content-list">
+                    <li>Interactive vision training games including Eye Focus Challenge and Color Memory Match</li>
+                    <li>Guided eye exercise routines with animated instructions and progress tracking</li>
+                    <li>Nutritional guidance and meal planning for optimal eye health</li>
+                    <li>Protection tips and habit tracking for digital eye strain prevention</li>
+                    <li>Progress analytics and personalized insights about your vision wellness journey</li>
+                    <li>Beautiful, modern interface designed for daily engagement and motivation</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Key Features</h3>
+                <p class="content-paragraph">
+                    Our app combines engaging gameplay with evidence-based eye exercises to make vision wellness 
+                    enjoyable and sustainable. All features are designed to complement, not replace, professional eye care.
+                </p>
+            </section>
+
+            <!-- Section 3: User Accounts -->
+            <section id="user-accounts" class="section">
+                <h2 class="section-title">3. User Accounts and Eligibility</h2>
+                
+                <h3 class="section-subtitle">Account Creation</h3>
+                <p class="content-paragraph">
+                    You may create an account to save your progress, sync across devices, and access personalized features. 
+                    You are responsible for maintaining the confidentiality of your account credentials.
+                </p>
+                
+                <h3 class="section-subtitle">Age Requirements</h3>
+                <ul class="content-list">
+                    <li>Users must be at least 13 years old to create an account independently</li>
+                    <li>Users under 18 require parental consent and supervision</li>
+                    <li>Parents are responsible for monitoring their children's use of the app</li>
+                    <li>Children under 13 may use the app with direct parental supervision</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Account Security</h3>
+                <p class="content-paragraph">
+                    You agree to notify us immediately of any unauthorized use of your account. We reserve the right 
+                    to suspend or terminate accounts that violate these terms.
+                </p>
+            </section>
+
+            <!-- Section 4: Health Disclaimer -->
+            <section id="health-disclaimer" class="section">
+                <h2 class="section-title">4. Health and Medical Disclaimer</h2>
+                
+                <div class="highlight-box important-notice">
+                    <div class="highlight-title">🏥 Medical Disclaimer</div>
+                    <p>VisionPro AI is NOT a medical device and should never replace professional eye care, medical advice, diagnosis, or treatment.</p>
+                </div>
+                
+                <h3 class="section-subtitle">Not Medical Advice</h3>
+                <p class="content-paragraph">
+                    All content, features, games, and exercises in VisionPro AI are for general wellness, entertainment, 
+                    and educational purposes only. They are not intended to:
+                </p>
+                <ul class="content-list">
+                    <li>Diagnose any eye conditions or vision problems</li>
+                    <li>Treat, cure, or prevent any medical conditions</li>
+                    <li>Replace regular eye examinations by qualified professionals</li>
+                    <li>Substitute for prescription medications or medical devices</li>
+                    <li>Provide personalized medical recommendations</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Professional Consultation Required</h3>
+                <p class="content-paragraph">
+                    Always consult with qualified eye care professionals for:
+                </p>
+                <ul class="content-list">
+                    <li>Regular eye examinations and vision screening</li>
+                    <li>Any concerns about your vision or eye health</li>
+                    <li>Before starting any new eye exercise routine if you have existing conditions</li>
+                    <li>Questions about medications or treatments</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Use at Your Own Risk</h3>
+                <p class="content-paragraph">
+                    By using VisionPro AI, you acknowledge that you do so at your own risk. If you experience any 
+                    discomfort, eye strain, headaches, or other symptoms while using the app, discontinue use immediately 
+                    and consult a healthcare professional.
+                </p>
+            </section>
+
+            <!-- Section 5: Privacy and Data -->
+            <section id="privacy" class="section">
+                <h2 class="section-title">5. Privacy and Data Protection</h2>
+                
+                <h3 class="section-subtitle">Data Collection</h3>
+                <p class="content-paragraph">
+                    We collect minimal data necessary to provide our services, including:
+                </p>
+                <ul class="content-list">
+                    <li>Game scores and exercise completion data for progress tracking</li>
+                    <li>App usage patterns to improve user experience</li>
+                    <li>Device information for compatibility and performance optimization</li>
+                    <li>Optional account information if you choose to create a profile</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Data Security</h3>
+                <p class="content-paragraph">
+                    We implement industry-standard security measures to protect your information. All data is stored 
+                    securely and transmitted using encryption protocols.
+                </p>
+                
+                <h3 class="section-subtitle">Data Sharing</h3>
+                <p class="content-paragraph">
+                    We do not sell, rent, or share your personal information with third parties except as outlined 
+                    in our Privacy Policy. We may share anonymized, aggregated data for research and improvement purposes.
+                </p>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title">🔒 Your Privacy Matters</div>
+                    <p>Read our complete Privacy Policy for detailed information about how we collect, use, and protect your data.</p>
+                </div>
+            </section>
+
+            <!-- Section 6: Usage Rules -->
+            <section id="usage-rules" class="section">
+                <h2 class="section-title">6. Acceptable Use and Conduct</h2>
+                
+                <h3 class="section-subtitle">Permitted Uses</h3>
+                <p class="content-paragraph">
+                    VisionPro AI is intended for personal, non-commercial use. You may:
+                </p>
+                <ul class="content-list">
+                    <li>Use all features for personal vision wellness and entertainment</li>
+                    <li>Share your progress with friends and family</li>
+                    <li>Use the app on multiple personal devices with the same account</li>
+                    <li>Provide feedback and suggestions for improvement</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Prohibited Activities</h3>
+                <p class="content-paragraph">
+                    You agree not to:
+                </p>
+                <ul class="content-list">
+                    <li>Reverse engineer, decompile, or attempt to extract source code</li>
+                    <li>Use the app for any commercial or business purposes without permission</li>
+                    <li>Create accounts using false information or impersonate others</li>
+                    <li>Attempt to hack, disrupt, or damage our servers or services</li>
+                    <li>Share your account credentials with others</li>
+                    <li>Use the app in any way that violates applicable laws or regulations</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Content and Feedback</h3>
+                <p class="content-paragraph">
+                    Any feedback, suggestions, or content you provide to us may be used to improve VisionPro AI. 
+                    By submitting feedback, you grant us a non-exclusive license to use your suggestions.
+                </p>
+            </section>
+
+            <!-- Section 7: Intellectual Property -->
+            <section id="intellectual-property" class="section">
+                <h2 class="section-title">7. Intellectual Property Rights</h2>
+                
+                <h3 class="section-subtitle">Our Ownership</h3>
+                <p class="content-paragraph">
+                    VisionPro AI, including all content, features, games, exercises, designs, graphics, text, software, 
+                    and other materials, is owned by us and protected by copyright, trademark, and other intellectual property laws.
+                </p>
+                
+                <h3 class="section-subtitle">Limited License</h3>
+                <p class="content-paragraph">
+                    We grant you a limited, non-exclusive, non-transferable license to use VisionPro AI for personal purposes 
+                    in accordance with these Terms. This license does not include the right to:
+                </p>
+                <ul class="content-list">
+                    <li>Copy, modify, or create derivative works of our content</li>
+                    <li>Distribute, sell, or license any part of the app</li>
+                    <li>Use our trademarks, logos, or branding without permission</li>
+                    <li>Extract or reuse our exercise routines or game mechanics</li>
+                </ul>
+                
+                <h3 class="section-subtitle">User-Generated Content</h3>
+                <p class="content-paragraph">
+                    While using VisionPro AI, you retain ownership of any personal data or progress information you create. 
+                    However, you grant us the right to store and process this information to provide our services.
+                </p>
+            </section>
+
+            <!-- Section 8: Limitations and Liability -->
+            <section id="limitations" class="section">
+                <h2 class="section-title">8. Limitations of Liability</h2>
+                
+                <h3 class="section-subtitle">Service Availability</h3>
+                <p class="content-paragraph">
+                    While we strive to provide reliable service, VisionPro AI is provided "as is" without warranties. 
+                    We do not guarantee uninterrupted access or error-free operation.
+                </p>
+                
+                <h3 class="section-subtitle">Limitation of Damages</h3>
+                <p class="content-paragraph">
+                    To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, 
+                    special, or consequential damages arising from your use of VisionPro AI, including:
+                </p>
+                <ul class="content-list">
+                    <li>Loss of data or progress information</li>
+                    <li>Interruption of service or technical difficulties</li>
+                    <li>Any health-related issues (please consult healthcare professionals)</li>
+                    <li>Device compatibility problems</li>
+                    <li>Third-party service disruptions</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Maximum Liability</h3>
+                <p class="content-paragraph">
+                    Our total liability to you for any claims arising from your use of VisionPro AI shall not exceed 
+                    the amount you paid for the app or any premium features.
+                </p>
+                
+                <div class="highlight-box important-notice">
+                    <div class="highlight-title">⚖️ Legal Notice</div>
+                    <p>Some jurisdictions do not allow limitations on liability. In such cases, our liability shall be limited to the fullest extent permitted by applicable law.</p>
+                </div>
+            </section>
+
+            <!-- Section 9: Updates and Changes -->
+            <section id="updates" class="section">
+                <h2 class="section-title">9. App Updates and Terms Changes</h2>
+                
+                <h3 class="section-subtitle">App Updates</h3>
+                <p class="content-paragraph">
+                    We regularly update VisionPro AI to improve functionality, add new features, and enhance your experience. 
+                    Updates may include:
+                </p>
+                <ul class="content-list">
+                    <li>New vision training games and exercise routines</li>
+                    <li>Enhanced progress tracking and analytics</li>
+                    <li>Improved user interface and design elements</li>
+                    <li>Bug fixes and performance optimizations</li>
+                    <li>Additional nutritional content and health tips</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Terms Modifications</h3>
+                <p class="content-paragraph">
+                    We may update these Terms and Conditions periodically. When we make significant changes, we will:
+                </p>
+                <ul class="content-list">
+                    <li>Notify users through the app or email</li>
+                    <li>Update the "Last Modified" date at the top of this document</li>
+                    <li>Provide a reasonable notice period before changes take effect</li>
+                    <li>Highlight major changes in our update notifications</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Continued Use</h3>
+                <p class="content-paragraph">
+                    Your continued use of VisionPro AI after any changes to these Terms constitutes acceptance of the new terms. 
+                    If you disagree with any changes, please discontinue use of the app.
+                </p>
+            </section>
+
+            <!-- Section 10: Termination -->
+            <section id="termination" class="section">
+                <h2 class="section-title">10. Termination</h2>
+                
+                <h3 class="section-subtitle">Termination by You</h3>
+                <p class="content-paragraph">
+                    You may stop using VisionPro AI at any time by simply uninstalling the app from your device. 
+                    If you have an account, you may also request account deletion through our support channels.
+                </p>
+                
+                <h3 class="section-subtitle">Termination by Us</h3>
+                <p class="content-paragraph">
+                    We may suspend or terminate your access to VisionPro AI if you:
+                </p>
+                <ul class="content-list">
+                    <li>Violate these Terms and Conditions</li>
+                    <li>Engage in fraudulent or harmful activities</li>
+                    <li>Attempt to compromise our systems or other users' accounts</li>
+                    <li>Use the app for illegal purposes</li>
+                </ul>
+                
+                <h3 class="section-subtitle">Effect of Termination</h3>
+                <p class="content-paragraph">
+                    Upon termination, your right to use VisionPro AI will cease immediately. We may retain certain 
+                    information as required by law or for legitimate business purposes, as outlined in our Privacy Policy.
+                </p>
+            </section>
+
+            <!-- Section 11: Governing Law -->
+            <section id="governing-law" class="section">
+                <h2 class="section-title">11. Governing Law and Disputes</h2>
+                
+                <h3 class="section-subtitle">Applicable Law</h3>
+                <p class="content-paragraph">
+                    These Terms and Conditions are governed by and construed in accordance with the laws of [Your Jurisdiction], 
+                    without regard to conflict of law principles.
+                </p>
+                
+                <h3 class="section-subtitle">Dispute Resolution</h3>
+                <p class="content-paragraph">
+                    We encourage users to contact us directly to resolve any issues. For formal disputes, both parties 
+                    agree to attempt resolution through good faith negotiation before pursuing legal action.
+                </p>
+                
+                <h3 class="section-subtitle">Jurisdiction</h3>
+                <p class="content-paragraph">
+                    Any legal actions or proceedings arising from these Terms shall be brought exclusively in the 
+                    courts of [Your Jurisdiction], and both parties consent to the jurisdiction of such courts.
+                </p>
+            </section>
+
+            <!-- Section 12: Contact Information -->
+            <section id="contact" class="section">
+                <h2 class="section-title">12. Contact Information</h2>
+                <p class="content-paragraph">
+                    If you have questions about these Terms and Conditions, need support, or want to provide feedback 
+                    about VisionPro AI, please reach out to us through any of the following channels:
+                </p>
+                
+                <div class="contact-box">
+                    <div class="highlight-title">📞 Get in Touch</div>
+                    <p>Our support team is here to help with any questions or concerns about VisionPro AI.</p>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-label">Email Support</div>
+                        <div class="contact-value">support@visionproai.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <div class="contact-label">In-App Support</div>
+                        <div class="contact-value">Settings → Help & Support</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        <div class="contact-label">Website</div>
+                        <div class="contact-value">www.visionproai.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div class="contact-label">App Store</div>
+                        <div class="contact-value">Rate & Review</div>
+                    </div>
+                </div>
+                
+                <h3 class="section-subtitle">Business Information</h3>
+                <p class="content-paragraph">
+                    VisionPro AI is developed and maintained by [Your Company Name]. We are committed to providing 
+                    excellent customer service and continuously improving our app based on user feedback.
+                </p>
+                
+                <h3 class="section-subtitle">Response Time</h3>
+                <p class="content-paragraph">
+                    We typically respond to support inquiries within 24-48 hours during business days. For urgent issues, 
+                    please use the in-app support feature for faster assistance.
+                </p>
+            </section>
+
+            <!-- Final Section -->
+            <section class="section">
+                <div class="highlight-box">
+                    <div class="highlight-title">✨ Thank You for Using VisionPro AI</div>
+                    <p>We're committed to helping you maintain healthy vision through engaging games, effective exercises, and smart wellness tracking. Your eye health journey starts here!</p>
+                </div>
+                
+                <p class="content-paragraph">
+                    <strong>By using VisionPro AI, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong>
+                </p>
+                
+                <p class="content-paragraph">
+                    These terms are effective as of the date listed above and will remain in effect until modified or terminated 
+                    in accordance with the provisions outlined in this document.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>👁️</span>
+                <span>VisionPro AI</span>
+            </div>
+            <p class="footer-text">
+                The most advanced eye health and vision training app. Transform your vision wellness journey with 
+                AI-powered insights, engaging games, and beautiful design.
+            </p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 VisionPro AI. All rights reserved. Designed with ❤️ for healthier vision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active state
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Smooth scroll to target
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Update active navigation based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section[id]');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + currentSection) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Enhanced hover effects for interactive elements
+        document.querySelectorAll('.contact-item, .highlight-box, .nav-item').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Print functionality
+        function printTerms() {
+            window.print();
+        }
+        
+        // Copy link functionality
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                // Show confirmation (could be enhanced with a toast notification)
+                alert('Link copied to clipboard!');
+            });
+        }
+        
+        // Mobile menu toggle (if needed for smaller screens)
+        function toggleMobileNav() {
+            const sidebar = document.querySelector('.nav-sidebar');
+            sidebar.classList.toggle('mobile-visible');
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in animations for better UX
+            const elementsToAnimate = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            elementsToAnimate.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.6s ease-out';
+                observer.observe(element);
+            });
+        });
+        
+        console.log('VisionPro AI Terms & Conditions page loaded successfully! 👁️✨');
+    </script>
+</body>
+</html>
