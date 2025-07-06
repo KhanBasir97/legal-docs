@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionPro AI - Support & Help Center</title>
+    <meta name="description" content="Get help with VisionPro AI - Eye Health Games & Training. Find answers to common questions, troubleshooting guides, and contact support.">
+    <meta name="keywords" content="VisionPro AI support, eye health app help, vision training support, eye exercise app FAQ">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #007AFF;
+            --primary-blue-dark: #0056CC;
+            --accent-purple: #5856D6;
+            --accent-pink: #FF2D92;
+            --success-green: #34C759;
+            --warning-orange: #FF9500;
+            --error-red: #FF3B30;
+            --text-primary: #1D1D1F;
+            --text-secondary: #8E8E93;
+            --bg-primary: #F2F2F7;
+            --bg-secondary: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 16px 60px rgba(0, 0, 0, 0.16);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: headerShine 8s ease-in-out infinite;
+        }
+        
+        @keyframes headerShine {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+        
+        .app-logo {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 48px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: logoFloat 4s ease-in-out infinite;
+            z-index: 10;
+            position: relative;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            z-index: 10;
+            position: relative;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            z-index: 10;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        /* Navigation */
+        .nav-tabs {
+            background: var(--bg-secondary);
+            padding: 20px 0;
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 0 20px;
+        }
+        
+        .nav-tab {
+            background: var(--bg-primary);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            color: var(--text-secondary);
+        }
+        
+        .nav-tab.active,
+        .nav-tab:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.3);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .faq-category {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .category-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--bg-primary);
+            padding-bottom: 20px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary-blue);
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-left: 25px;
+        }
+        
+        .faq-answer strong {
+            color: var(--text-primary);
+        }
+        
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .feature-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 122, 255, 0.1), transparent);
+            transition: all 0.8s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--success-green), #30D158);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .contact-description {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .contact-button:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* App Store Links */
+        .app-store-section {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            margin: 50px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .app-store-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .app-store-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        .app-store-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .app-store-button {
+            background: #000000;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .app-store-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .header p {
+                font-size: 18px;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .app-store-section {
+                padding: 30px 20px;
+            }
+            
+            .app-store-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-container {
+                justify-content: flex-start;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1C1C1E;
+                --bg-secondary: #2C2C2E;
+                --text-primary: #FFFFFF;
+                --text-secondary: #8E8E93;
+                --glass-bg: rgba(44, 44, 46, 0.8);
+            }
+            
+            .app-store-button {
+                background: #333333;
+            }
+            
+            .footer {
+                background: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="app-logo">👁️</div>
+            <h1>VisionPro AI Support</h1>
+            <p>Your complete guide to better eye health through smart training, advanced testing, and intelligent nutrition guidance.</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+        <div class="container">
+            <div class="nav-container">
+                <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+                <button class="nav-tab" onclick="showSection('faq')">FAQ</button>
+                <button class="nav-tab" onclick="showSection('features')">Features</button>
+                <button class="nav-tab" onclick="showSection('troubleshooting')">Troubleshooting</button>
+                <button class="nav-tab" onclick="showSection('contact')">Contact</button>
+                <button class="nav-tab" onclick="showSection('privacy')">Privacy</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <h2 class="section-title">Welcome to VisionPro AI</h2>
+                <p class="section-subtitle">Transform your eye health with our comprehensive vision training platform featuring games, exercises, nutrition guidance, and smart protection tips.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3 class="feature-title">Vision Training Games</h3>
+                        <p class="feature-description">Improve your eye coordination and reaction time with our engaging Eye Focus Challenge and Color Memory Match games. Progressive difficulty adapts to your skill level.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">💪</div>
+                        <h3 class="feature-title">Guided Eye Exercises</h3>
+                        <p class="feature-description">Follow 15+ scientifically-designed exercises with beautiful animations. Custom routines for morning energy, computer breaks, and bedtime relaxation.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🥗</div>
+                        <h3 class="feature-title">Smart Nutrition</h3>
+                        <p class="feature-description">Discover eye-healthy superfoods, track your nutrition, and get personalized meal planning recommendations for optimal vision health.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">Eye Protection</h3>
+                        <p class="feature-description">Monitor screen time, get UV protection alerts, and learn about environmental factors that can harm your vision with smart prevention tips.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Progress Tracking</h3>
+                        <p class="feature-description">Visualize your improvement with beautiful charts, weekly reports, and achievement tracking. Build healthy habits with streak counters.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔬</div>
+                        <h3 class="feature-title">Eye Testing</h3>
+                        <p class="feature-description">Perform comprehensive eye assessments including visual acuity, color vision, astigmatism, and contrast sensitivity tests.</p>
+                    </div>
+                </div>
+                
+                <div class="app-store-section">
+                    <h3 class="app-store-title">Download VisionPro AI</h3>
+                    <p class="app-store-subtitle">Available now on the App Store. Transform your eye health today!</p>
+                    <div class="app-store-buttons">
+                        <a href="#" class="app-store-button">
+                            <span>📱</span>
+                            <span>Download on App Store</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section id="faq" class="section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to the most common questions about VisionPro AI.</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🎮</span>
+                            <span>Games & Training</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📊</span>
+                                Understanding your performance stats
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Score:</strong> Total points earned during session<br>
+                                <strong>Streak:</strong> Consecutive targets hit without missing<br>
+                                <strong>Accuracy:</strong> Percentage of targets successfully hit<br>
+                                <strong>Reaction Time:</strong> Average speed of target detection and response
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🏆</span>
+                                Tips for better scores
+                            </div>
+                            <div class="faq-answer">
+                                • <strong>Stay relaxed</strong> and maintain steady breathing<br>
+                                • <strong>Track with your eyes</strong> before moving your finger<br>
+                                • <strong>Practice daily</strong> for 5-10 minutes<br>
+                                • Start with Easy mode and progress gradually
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🎨</span>
+                            <span>Color Memory Match</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🧠</span>
+                                How Color Memory works
+                            </div>
+                            <div class="faq-answer">
+                                Watch the color sequence carefully, then reproduce it by tapping colors in the same order. Each level adds one more color to remember. Uses <strong>spaced repetition</strong> to strengthen working memory and visual processing.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>⚡</span>
+                                Memory improvement strategies
+                            </div>
+                            <div class="faq-answer">
+                                • <strong>Create patterns:</strong> Look for color relationships<br>
+                                • <strong>Use chunking:</strong> Group colors into segments<br>
+                                • <strong>Practice visualization:</strong> See the sequence in your mind<br>
+                                • <strong>Stay focused:</strong> Eliminate distractions during play
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>💪</span>
+                            <span>Eye Exercises</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>👁️</span>
+                                Basic exercises explained
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Blinking:</strong> Lubricates eyes and reduces dryness<br>
+                                <strong>Palming:</strong> Relaxes eye muscles in complete darkness<br>
+                                <strong>20-20-20 Rule:</strong> Reduces digital eye strain<br>
+                                <strong>Eye Rolls:</strong> Improves flexibility and circulation
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🎯</span>
+                                Focus training exercises
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Near-Far Focus:</strong> Strengthens accommodation muscles<br>
+                                <strong>Pencil Push-ups:</strong> Improves convergence ability<br>
+                                <strong>Dot Focus:</strong> Enhances concentration and attention<br>
+                                <strong>Zoom Focus:</strong> Advanced flexibility training
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🔄</span>
+                                Movement exercises
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Horizontal/Vertical:</strong> Basic tracking movements<br>
+                                <strong>Diagonal:</strong> Corner-to-corner coordination<br>
+                                <strong>Circular:</strong> Smooth pursuit training<br>
+                                <strong>Figure Eight:</strong> Complex pattern coordination<br>
+                                <strong>Object Tracking:</strong> Advanced pursuit movements
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>📋</span>
+                            <span>Exercise Routines</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🌅</span>
+                                Morning Energizer (8 minutes)
+                            </div>
+                            <div class="faq-answer">
+                                Perfect way to start your day with gentle eye activation. Includes blinking, eye rolls, near-far focus, and basic movements to prepare your vision for daily activities.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>💻</span>
+                                Computer Break (3 minutes)
+                            </div>
+                            <div class="faq-answer">
+                                Essential for anyone working on screens. Combines 20-20-20 rule, blinking exercises, and palming to quickly relieve digital eye strain and refresh your vision.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>💪</span>
+                                Strength Builder (12 minutes)
+                            </div>
+                            <div class="faq-answer">
+                                Advanced routine for serious training. Includes all movement patterns, focus exercises, and challenging coordination drills to maximize eye muscle strength and flexibility.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🌙</span>
+                                Bedtime Relaxer (6 minutes)
+                            </div>
+                            <div class="faq-answer">
+                                Calming routine to prepare for sleep. Features gentle palming, slow blinking, and relaxation techniques to reduce eye tension from the day's activities.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Troubleshooting Section -->
+            <section id="troubleshooting" class="section">
+                <h2 class="section-title">Troubleshooting Guide</h2>
+                <p class="section-subtitle">Quick solutions to common issues you might encounter.</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>📱</span>
+                            <span>App Performance</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🐌</span>
+                                App is running slowly or lagging
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Quick fixes:</strong><br>
+                                • Close other apps running in background<br>
+                                • Restart VisionPro AI completely<br>
+                                • Ensure iOS is updated to latest version<br>
+                                • Free up device storage (need 1GB+ available)<br>
+                                • Check for app updates in App Store
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❌</span>
+                                App crashes or won't start
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Step-by-step solution:</strong><br>
+                                1. <strong>Force close</strong> the app (swipe up and swipe away)<br>
+                                2. <strong>Restart your device</strong> completely<br>
+                                3. <strong>Update the app</strong> if available<br>
+                                4. <strong>Reinstall the app</strong> (your purchase will be restored)<br>
+                                5. Contact support if problem persists
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🔄</span>
+                                Games or exercises freeze during play
+                            </div>
+                            <div class="faq-answer">
+                                This usually indicates memory or processing issues:<br>
+                                • <strong>Lower graphics quality</strong> in settings<br>
+                                • <strong>Close background apps</strong> before playing<br>
+                                • <strong>Play in shorter sessions</strong> (5-10 minutes)<br>
+                                • Ensure device isn't overheating
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🎮</span>
+                            <span>Gaming Issues</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🎯</span>
+                                Targets not responding to taps
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Calibration issues:</strong><br>
+                                • <strong>Clean your screen</strong> thoroughly<br>
+                                • <strong>Remove screen protector</strong> temporarily to test<br>
+                                • <strong>Adjust touch sensitivity</strong> in device settings<br>
+                                • Try using different finger or stylus<br>
+                                • Ensure proper lighting conditions
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📊</span>
+                                Progress not saving properly
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Data sync solutions:</strong><br>
+                                • <strong>Enable iCloud backup</strong> in device settings<br>
+                                • <strong>Complete sessions fully</strong> before closing app<br>
+                                • <strong>Check internet connection</strong> for cloud sync<br>
+                                • Manually sync in Settings > Data & Privacy
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🔊</span>
+                                No sound or audio issues
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Audio troubleshooting:</strong><br>
+                                • Check device volume and mute switch<br>
+                                • <strong>Enable sound effects</strong> in app settings<br>
+                                • <strong>Test with headphones</strong> to isolate issue<br>
+                                • Restart app after adjusting audio settings
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>💳</span>
+                            <span>Purchase & Premium</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❌</span>
+                                Premium purchase failed
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Payment troubleshooting:</strong><br>
+                                • <strong>Verify payment method</strong> in App Store settings<br>
+                                • <strong>Check Apple ID billing</strong> information<br>
+                                • <strong>Ensure sufficient funds</strong> or valid card<br>
+                                • Try purchasing from App Store directly<br>
+                                • Contact Apple Support for payment issues
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🔄</span>
+                                Premium features not unlocked
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Activation steps:</strong><br>
+                                1. Go to <strong>Settings > Premium</strong><br>
+                                2. Tap <strong>"Restore Purchase"</strong><br>
+                                3. <strong>Sign in with Apple ID</strong> used for purchase<br>
+                                4. <strong>Restart the app</strong> completely<br>
+                                5. Check for premium badge in header
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>💰</span>
+                                Requesting refunds
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Refund process:</strong><br>
+                                • <strong>Contact Apple directly</strong> (not our support)<br>
+                                • Use <strong>reportaproblem.apple.com</strong><br>
+                                • <strong>Request within 30 days</strong> of purchase<br>
+                                • Provide reason for refund request<br>
+                                • Keep purchase receipt/email
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🔬</span>
+                            <span>Testing Issues</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📏</span>
+                                Test results seem inaccurate
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Accuracy factors:</strong><br>
+                                • <strong>Proper distance:</strong> Hold device 20-24 inches away<br>
+                                • <strong>Good lighting:</strong> Bright, even illumination<br>
+                                • <strong>Clean screen:</strong> No smudges or glare<br>
+                                • <strong>Stable position:</strong> Rest elbows on table<br>
+                                • <strong>Follow instructions</strong> exactly as shown
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🎨</span>
+                                Color tests not displaying correctly
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Display calibration:</strong><br>
+                                • <strong>Adjust screen brightness</strong> to comfortable level<br>
+                                • <strong>Turn off night mode</strong> during testing<br>
+                                • <strong>Test in daylight conditions</strong> when possible<br>
+                                • Ensure <strong>True Tone is disabled</strong> temporarily<br>
+                                • Use device's native display settings
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Contact Support</h2>
+                <p class="section-subtitle">We're here to help! Choose the best way to get assistance with VisionPro AI.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3 class="contact-title">Email Support</h3>
+                        <p class="contact-description">Get detailed help with technical issues, billing questions, or feature requests.</p>
+                        <a href="mailto:support@visionproai.com" class="contact-button">Send Email</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">💬</div>
+                        <h3 class="contact-title">FAQ & Help</h3>
+                        <p class="contact-description">Browse our comprehensive knowledge base for instant answers to common questions.</p>
+                        <a href="#faq" class="contact-button" onclick="showSection('faq')">Browse FAQ</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🐛</div>
+                        <h3 class="contact-title">Bug Reports</h3>
+                        <p class="contact-description">Found a bug or experiencing issues? Help us improve by reporting problems.</p>
+                        <a href="mailto:bugs@visionproai.com" class="contact-button">Report Bug</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">💡</div>
+                        <h3 class="contact-title">Feature Requests</h3>
+                        <p class="contact-description">Have ideas for new features or improvements? We'd love to hear from you!</p>
+                        <a href="mailto:feedback@visionproai.com" class="contact-button">Send Feedback</a>
+                    </div>
+                </div>
+                
+                <div class="faq-category" style="margin-top: 50px;">
+                    <h3 class="category-title">
+                        <span>⏰</span>
+                        <span>Support Hours & Response Times</span>
+                    </h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>🕐</span>
+                            When will I receive a response?
+                        </div>
+                        <div class="faq-answer">
+                            <strong>Email Support:</strong> Within 24-48 hours (business days)<br>
+                            <strong>Bug Reports:</strong> Within 2-5 business days<br>
+                            <strong>Feature Requests:</strong> Acknowledgment within 1 week<br>
+                            <strong>Urgent Issues:</strong> Same day response during business hours
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>📝</span>
+                            What information should I include?
+                        </div>
+                        <div class="faq-answer">
+                            <strong>Device Information:</strong> iPhone/iPad model, iOS version<br>
+                            <strong>App Version:</strong> Found in Settings > About<br>
+                            <strong>Issue Description:</strong> Detailed steps to reproduce<br>
+                            <strong>Screenshots:</strong> If applicable, attach relevant images<br>
+                            <strong>Premium Status:</strong> Free or Premium user
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Privacy Section -->
+            <section id="privacy" class="section">
+                <h2 class="section-title">Privacy & Security</h2>
+                <p class="section-subtitle">Your privacy and data security are our top priorities. Learn how we protect your information.</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🔒</span>
+                            <span>Data Protection</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🛡️</span>
+                                How is my data protected?
+                            </div>
+                            <div class="faq-answer">
+                                We use <strong>industry-standard encryption</strong> (AES-256) for all data transmission and storage. Your personal information is never shared with third parties without explicit consent. All health data remains on your device unless you choose to sync with iCloud.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📊</span>
+                                What data do you collect?
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Game/Exercise Data:</strong> Scores, progress, and usage patterns<br>
+                                <strong>Settings:</strong> App preferences and customizations<br>
+                                <strong>Technical Data:</strong> Device type, OS version, crash reports<br>
+                                <strong>We DO NOT collect:</strong> Personal identity, location, or contacts
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>☁️</span>
+                                How does iCloud sync work?
+                            </div>
+                            <div class="faq-answer">
+                                When enabled, your progress data syncs securely through <strong>Apple's iCloud</strong> using end-to-end encryption. This allows you to access your data across multiple devices while maintaining complete privacy.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>👤</span>
+                            <span>Your Rights</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📥</span>
+                                Can I download my data?
+                            </div>
+                            <div class="faq-answer">
+                                Yes! <strong>Premium users</strong> can export their complete progress data, test results, and analytics as PDF reports. Free users can request their data by contacting support.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🗑️</span>
+                                How do I delete my data?
+                            </div>
+                            <div class="faq-answer">
+                                Go to <strong>Settings > Data & Privacy > Delete All Data</strong>. This permanently removes all local data. To delete iCloud data, disable iCloud sync and contact support for complete removal.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📧</span>
+                                Do you send marketing emails?
+                            </div>
+                            <div class="faq-answer">
+                                We only send <strong>essential app updates</strong> and security notifications. We never share your email with marketers or third parties. You can opt out of all non-essential communications in settings.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>⚖️</span>
+                            <span>Legal Information</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>📋</span>
+                                Terms of Service
+                            </div>
+                            <div class="faq-answer">
+                                By using VisionPro AI, you agree to our terms of service. The app is for <strong>educational and wellness purposes</strong> only and does not replace professional medical advice. <a href="#" class="terms-link">Read full terms</a>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🏥</span>
+                                Medical Disclaimer
+                            </div>
+                            <div class="faq-answer">
+                                VisionPro AI is <strong>not a medical device</strong> and cannot diagnose eye conditions. Our tests and exercises are for educational purposes. Always consult qualified eye care professionals for medical concerns.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>👶</span>
+                                Children's Privacy (COPPA)
+                            </div>
+                            <div class="faq-answer">
+                                We comply with <strong>COPPA regulations</strong>. We do not knowingly collect personal information from children under 13. Parents should supervise children's use and contact us if any data was collected inadvertently.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="app-store-section">
+                    <h3 class="app-store-title">Privacy-First Design</h3>
+                    <p class="app-store-subtitle">VisionPro AI is built with privacy by design principles, ensuring your health data stays secure and private.</p>
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; margin-bottom: 10px;">🔒</div>
+                            <strong>End-to-End Encryption</strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; margin-bottom: 10px;">📱</div>
+                            <strong>Local Data Storage</strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; margin-bottom: 10px;">🚫</div>
+                            <strong>No Third-Party Sharing</strong>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; margin-bottom: 10px;">✅</div>
+                            <strong>GDPR Compliant</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">👁️ VisionPro AI</div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Medical Disclaimer</a>
+                    <a href="mailto:support@visionproai.com" class="footer-link">Contact Support</a>
+                    <a href="#" class="footer-link">App Store</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2024 VisionPro AI. All rights reserved. | Version 3.0 | Made with ❤️ for better eye health
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to corresponding nav tab
+            event.target.classList.add('active');
+            
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // FAQ toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isVisible = answer.style.display === 'block';
+                    
+                    // Toggle visibility
+                    answer.style.display = isVisible ? 'none' : 'block';
+                    
+                    // Add visual feedback
+                    this.style.color = isVisible ? '' : 'var(--primary-blue)';
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Search functionality (basic)
+        function searchSupport() {
+            const searchTerm = prompt('Search support articles:');
+            if (searchTerm) {
+                const sections = document.querySelectorAll('.faq-item, .feature-card');
+                let found = false;
+                
+                sections.forEach(section => {
+                    const text = section.textContent.toLowerCase();
+                    if (text.includes(searchTerm.toLowerCase())) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                        section.style.backgroundColor = '#ffffcc';
+                        setTimeout(() => {
+                            section.style.backgroundColor = '';
+                        }, 3000);
+                        found = true;
+                        return;
+                    }
+                });
+                
+                if (!found) {
+                    alert('No results found. Try browsing the FAQ sections or contact support.');
+                }
+            }
+        }
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '/' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                searchSupport();
+            }
+        });
+        
+        // Analytics and tracking (placeholder)
+        function trackSupportUsage(action) {
+            console.log('Support action:', action);
+            // In real implementation, this would send analytics data
+        }
+        
+        // Track section views
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                trackSupportUsage('section_view_' + this.textContent.toLowerCase());
+            });
+        });
+        
+        console.log('VisionPro AI Support Center Loaded');
+        console.log('Features: Comprehensive FAQ • Troubleshooting • Contact Support • Privacy Info');
+    </script>
+</body>
+</html>question">
+                                <span>❓</span>
+                                How do the vision games help my eye health?
+                            </div>
+                            <div class="faq-answer">
+                                Our games are designed to improve <strong>eye coordination</strong>, <strong>reaction time</strong>, and <strong>visual processing</strong>. The Eye Focus Challenge enhances tracking skills, while Color Memory Match strengthens pattern recognition and cognitive-visual connections.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                How long should I exercise my eyes daily?
+                            </div>
+                            <div class="faq-answer">
+                                We recommend <strong>5-10 minutes</strong> of eye exercises 2-3 times daily. Our app includes built-in timers and reminders to help you maintain a consistent routine without overexertion.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                Can children use VisionPro AI safely?
+                            </div>
+                            <div class="faq-answer">
+                                Yes! Our games and exercises are safe for children <strong>ages 6 and up</strong>. Parents should supervise usage and ensure proper lighting and device distance during exercises.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                What's the difference between free and premium?
+                            </div>
+                            <div class="faq-answer">
+                                <strong>Free version</strong> includes basic games and exercises with limited daily plays. <strong>Premium ($9.99 one-time)</strong> unlocks unlimited gaming, advanced analytics, custom routines, professional testing, and ad-free experience.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🔬</span>
+                            <span>Eye Testing</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                Are the eye tests medically accurate?
+                            </div>
+                            <div class="faq-answer">
+                                Our tests are designed for <strong>educational and screening purposes</strong> only. While based on established testing methods, they cannot replace professional eye exams. Always consult an eye care professional for medical diagnosis.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                How should I prepare for testing?
+                            </div>
+                            <div class="faq-answer">
+                                Ensure <strong>good lighting</strong>, hold your device at the recommended distance, clean your screen, and take tests when you're well-rested. Follow the calibration instructions for accurate results.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                Can I share my test results with my doctor?
+                            </div>
+                            <div class="faq-answer">
+                                Yes! Premium users can <strong>export detailed PDF reports</strong> that include test results, progress charts, and recommendations to share with healthcare providers.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🥗</span>
+                            <span>Nutrition & Health</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                How does nutrition affect eye health?
+                            </div>
+                            <div class="faq-answer">
+                                Proper nutrition provides essential <strong>vitamins and antioxidants</strong> that protect against age-related eye diseases. Our app highlights foods rich in lutein, zeaxanthin, omega-3s, and vitamins A, C, and E.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                Can the app replace nutritional supplements?
+                            </div>
+                            <div class="faq-answer">
+                                Our app provides <strong>educational guidance</strong> about eye-healthy foods and nutrition. For supplement recommendations, always consult with your healthcare provider or nutritionist.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                What foods should I avoid for better eye health?
+                            </div>
+                            <div class="faq-answer">
+                                Limit <strong>processed foods</strong>, excessive sugar, trans fats, and high-sodium items. Our protection guide explains which foods can harm eye health and provides healthier alternatives.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>⚙️</span>
+                            <span>Technical Support</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                What devices are supported?
+                            </div>
+                            <div class="faq-answer">
+                                VisionPro AI requires <strong>iOS 14.0 or later</strong> and is optimized for iPhone and iPad. Works best on devices with larger screens for comfortable eye exercises.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                Why won't the app load properly?
+                            </div>
+                            <div class="faq-answer">
+                                Try <strong>restarting the app</strong>, checking your internet connection, and ensuring you have the latest version. If problems persist, restart your device or contact support.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                How do I restore my premium purchase?
+                            </div>
+                            <div class="faq-answer">
+                                Go to Settings > Premium > Restore Purchase. Ensure you're signed in with the same Apple ID used for the original purchase. Contact support if issues persist.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>❓</span>
+                                Is my data secure and private?
+                            </div>
+                            <div class="faq-answer">
+                                Yes! We use <strong>industry-standard encryption</strong> and never share personal data. Health information stays on your device. Read our Privacy Policy for complete details.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="section">
+                <h2 class="section-title">Complete Feature Guide</h2>
+                <p class="section-subtitle">Learn how to make the most of every VisionPro AI feature.</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-category">
+                        <h3 class="category-title">
+                            <span>🎯</span>
+                            <span>Eye Focus Challenge</span>
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>🎮</span>
+                                How to play Eye Focus Challenge
+                            </div>
+                            <div class="faq-answer">
+                                Tap moving targets as fast as you can! Choose difficulty (Easy/Medium/Hard), follow the 3-second countdown, then tap targets before they disappear. Different target types offer bonus points: <strong>🎯 Normal (10pts)</strong>, <strong>⚡ Challenge (25pts)</strong>, <strong>⭐ Bonus (50pts)</strong>.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-
